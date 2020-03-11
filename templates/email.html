@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Send emails</title>
+	<style>
+
+		h1{
+			text-align:center;
+		}
+		p{	
+			text-align:center;
+			font-style: italic;
+
+		}
+		input{
+			padding:5px;
+			margin:5px;
+			border-radius: 5px;
+		}
+		form{
+			padding:10px;
+			margin:0 auto;
+			text-align:center;
+			width: 400px
+		}
+		textarea{
+			border-radius: 15px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<h1>Send Email</h1>
+	<p>Works only with mail.com</p>
+
+	<form action="/email" method="POST">
+		<input type="text" name="from_email" placeholder="from..." required>
+		<input type="password" name="password" placeholder="Password" required>
+		<input type="text" name="to_email" placeholder="to..." required>
+		<input type="text" name="title" placeholder="Title" required>
+		<textarea rows="10" cols="51" name="message"></textarea>
+		<input type="submit" value="Send">
+	</form>
+</body>
+</html>
