@@ -3,8 +3,9 @@ from time import sleep
 import hashlib
 from send_mail import send_email
 
-user_name = "035BFE1ED381083C243CAF55CE5E2387938E8762"
-hashed_pass = "D3A3BA018C68B264EC9CF6DA5419AA4F80084EDD"
+
+user_name = "12DEA96FEC20593566AB75692C9949596833ADC9" #user
+hashed_pass = "5BAA61E4C9B93F3F0682250B6CF8331B7EE68FD8" #password
 
 app = Flask(__name__)
 
