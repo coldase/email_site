@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, request, flash
-
 import hashlib
 from send_mail import send_email
 
@@ -9,7 +8,7 @@ hashed_pass = "5BAA61E4C9B93F3F0682250B6CF8331B7EE68FD8" #password
 
 app = Flask(__name__)
 
-
+#Route for landing, redirects -> /login
 @app.route("/")
 def landing():
 	return redirect("/login")
@@ -38,6 +37,7 @@ def email_page():
 		e_sub = request.form["title"]
 		e_msg = request.form["message"]
 		try:
+            #username, password, to email, subject, message
 			send_email(e_usr, e_pwd, e_to, e_sub, e_msg)
 			print("Email Sent...")
 			return redirect("/email")
