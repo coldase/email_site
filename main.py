@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request, flash
-from time import sleep
+
 import hashlib
 from send_mail import send_email
 
@@ -14,7 +14,7 @@ app = Flask(__name__)
 def landing():
 	return redirect("/login")
 
-
+#Route for loginsscreen
 @app.route("/login", methods=["GET","POST"])
 def login_page():
 	if request.method == "POST":
@@ -28,7 +28,7 @@ def login_page():
 			return redirect("/login")
 	return render_template("login.html")		
 
-
+#Route for sending email
 @app.route("/email", methods=["GET","POST"])
 def email_page():
 	if request.method == "POST":
@@ -46,6 +46,7 @@ def email_page():
 			return redirect("/email")
 	return render_template("email.html")
 
+#Route for loadingscreen
 @app.route("/log")
 def logginin():
 	return render_template("log.html")
